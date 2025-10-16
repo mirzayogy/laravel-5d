@@ -48,4 +48,5 @@ return view('matakuliah.index',[
 
 
 Route::get('/matakuliah', [MatakuliahController::class, 'index']);
+Route::resource('matakuliah', MatakuliahController::class);
 
