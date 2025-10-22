@@ -8,8 +8,13 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/matakuliah', [MatakuliahController::class, 'index']);
-Route::get('/matakuliah/{id}', [MatakuliahController::class, 'show']);
+// Route::get('/matakuliah', [MatakuliahController::class, 'index']);
+// Route::get('/matakuliah/{id}', [MatakuliahController::class, 'show']);
+// Route::get('matakuliahtambah', [MatakuliahController::class, 'create'])
+//     ->name('matakuliahtambah');
+
+Route::resource('/matakuliah', MatakuliahController::class);
+
 
 
 Route::get('/coba', function() {

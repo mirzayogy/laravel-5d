@@ -14,14 +14,26 @@ class MatakuliahSeeder extends Seeder
     public function run(): void
     {
         Matakuliah::create([
-            'kode_mk' => "ABC123",
-            'nama' => 'Tuwaga',
+            'kode_mk' => "MK-001",
+            'nama' => 'Pemrograman Berbasis Objek 1',
             'jumlah_sks' => 3,
             'prodi_id' => 1,
         ]);
         Matakuliah::create([
-            'kode_mk' => "ABC124",
-            'nama' => 'Tuwampat',
+            'kode_mk' => "MK-002",
+            'nama' => 'Pemrograman Berbasis Objek 1',
+            'jumlah_sks' => 3,
+            'prodi_id' => 1,
+        ]);
+        Matakuliah::create([
+            'kode_mk' => "MI-001",
+            'nama' => 'Pemrograman Terstruktur',
+            'jumlah_sks' => 3,
+            'prodi_id' => 1,
+        ]);
+        Matakuliah::create([
+            'kode_mk' => "MI-002",
+            'nama' => 'Algoritma dan Pemrogaman 1',
             'jumlah_sks' => 3,
             'prodi_id' => 1,
         ]);
