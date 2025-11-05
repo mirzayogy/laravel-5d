@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Matakuliah;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MatakuliahController extends Controller
 {
@@ -31,7 +32,14 @@ class MatakuliahController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data_tervalidasi = $request->validate([
+            'kode_mk' => 'required',
+            'nama' => 'required',
+            'jumlah_sks' => 'required',
+            'prodi_id' => 'required',
+        ]);
+        Matakuliah::create($data_tervalidasi);
+        return redirect('/matakuliah')->with('berhasil','Berhasil tambah data');
     }
 
     /**
@@ -45,24 +53,38 @@ class MatakuliahController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Matakuliah $matakuliah)
     {
-        //
+        return view('matakuliah.edit',["matakuliah" => $matakuliah]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Matakuliah $matakuliah)
     {
-        //
+        $request->validate([
+            'kode_mk' => 'required',
+            'nama' => 'required',
+            'jumlah_sks' => 'required',
+            'prodi_id' => 'required',
+        ]);
+
+        $matakuliah->update([
+            'kode_mk' => $request->kode_mk,
+            'nama' => $request->nama,
+            'jumlah_sks' => $request->jumlah_sks,
+            'prodi_id' => $request->prodi_id,
+        ]);
+        return redirect('/matakuliah')->with('berhasil', 'Berhasil ubah data');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Matakuliah $matakuliah)
     {
-        //
+        $matakuliah->delete();
+        return redirect('/matakuliah')->with('success', 'Berhasil hapus data');
     }
 }

@@ -12,4 +12,6 @@
     <br>
     <label for="">Prodi ID</label>
     <input type="text" name="prodi_id">
+    <br>
+    <button type="submit">Simpan</button>
 </form>

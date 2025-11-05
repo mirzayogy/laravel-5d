@@ -16,6 +16,10 @@
         background-color: #dddddd;
     }
 </style>
+@if (session('berhasil'))
+    {{ session('berhasil') }}
+    <br>
+@endif
 <a href="{{ route('matakuliah.create') }}">Tambah</a>
 <table>
     <thead>
@@ -35,10 +39,24 @@
                 <td>{{ $matakuliah['jumlah_sks'] }}</td>
                 <td>{{ $matakuliah['prodi_id'] }}</td>
                 <td>
-                    <a href="#">Ubah</a>
-                    <a href="#">Hapus</a>
+                    <a href="{{ route('matakuliah.edit', $matakuliah) }}">Ubah</a>
+                    <button onclick="konfirmasi('{{ route('matakuliah.destroy', $matakuliah) }}')">Hapus</button>
                 </td>
             </tr>
         @endforeach
     </tbody>
 </table>
+<form action="" method="POST" id="deleteForm">
+    @csrf
+    @method('DELETE')
+
+</form>
+
+<script>
+    function konfirmasi(href) {
+        if (confirm('Hapus?')) {
+            document.getElementById('deleteForm').action = href
+            document.getElementById('deleteForm').submit()
+        }
+    }
+</script>
