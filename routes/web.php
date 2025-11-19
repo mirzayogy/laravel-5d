@@ -8,6 +8,10 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/welcome', function () {
+    return view('welcome');
+});
+
 // Route::get('/matakuliah', [MatakuliahController::class, 'index']);
 // Route::get('/matakuliah/{id}', [MatakuliahController::class, 'show']);
 // Route::get('matakuliahtambah', [MatakuliahController::class, 'create'])
