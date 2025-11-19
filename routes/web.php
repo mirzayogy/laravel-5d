@@ -25,6 +25,11 @@ Route::get('/coba', function() {
     return view('welcome');
 });
 
+
+Route::get('/dosen', function () {
+    return view('dosen.index');
+});
+
 Route::get('/copy', function () {
     return view('copy');
 });

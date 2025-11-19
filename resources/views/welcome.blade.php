@@ -10,7 +10,7 @@
             <div id="content">
                 @include('template.components.topbar')
                 <div class="container-fluid">
-
+                    @yield('content')
                 </div>
             </div>
             @include('template.components.footer')
