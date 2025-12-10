@@ -89,3 +89,6 @@ php artisan make:model Prodi -mcrs
     3. seeder (jika ada)
 
 php artisan migrate
+
+=====================================
+menampilkan relasi data
