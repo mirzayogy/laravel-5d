@@ -81,4 +81,9 @@ public function create()
 </form>
 
 
-
+=====================================
+php artisan make:model Prodi -mcrs
+- lanjutkan isi:
+    1. migration
+    2. model
+    3. seeder (jika ada)
