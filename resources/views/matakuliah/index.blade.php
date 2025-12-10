@@ -32,7 +32,7 @@
                                 <td>{{ $matakuliah['kode_mk'] }}</td>
                                 <td>{{ $matakuliah['nama'] }}</td>
                                 <td>{{ $matakuliah['jumlah_sks'] }}</td>
-                                <td>{{ $matakuliah['prodi_id'] }}</td>
+                                <td>{{ $matakuliah->prodi->nama_prodi }}</td>
                                 <td style="align-items: center">
                                     <a href="{{ route('matakuliah.edit', $matakuliah) }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
                                     <button class="btn btn-danger btn-sm"

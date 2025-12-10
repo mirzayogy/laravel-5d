@@ -14,6 +14,7 @@ class MatakuliahController extends Controller
     public function index()
     {
         $banyak_matakuliah = Matakuliah::all();
+        // $banyak_matakuliah = Matakuliah::with('prodi')->get();
         return view('matakuliah.index',[
             "banyak_matakuliah" => $banyak_matakuliah
         ]);

@@ -87,3 +87,5 @@ php artisan make:model Prodi -mcrs
     1. migration
     2. model
     3. seeder (jika ada)
+
+php artisan migrate
