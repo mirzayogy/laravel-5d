@@ -18,7 +18,7 @@ Route::get('/welcome', function () {
 //     ->name('matakuliahtambah');
 
 Route::resource('/matakuliah', MatakuliahController::class);
-
+Route::get('report', [MatakuliahController::class, 'report'])->name('matakuliah.report');
 
 
 Route::get('/coba', function() {

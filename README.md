@@ -92,3 +92,25 @@ php artisan migrate
 
 =====================================
 menampilkan relasi data
+
+=====================================
+Membuat report PDF menggunakan html2pdf
+
+1. Jalankan:
+    composer require spipu/html2pdf
+2. buat method report pada controller yang isinya
+
+public function report(){
+    $banyak_matakuliah = Matakuliah::with('prodi')->get();
+
+    $content = view('matakuliah.report', [
+        "banyak_matakuliah" => $banyak_matakuliah,
+    ]);
+
+    $html2pdf = new \Spipu\Html2Pdf\Html2Pdf('P', 'A4', 'en');
+    $html2pdf->writeHTML($content);
+    $html2pdf->output();
+}
+
+3. buat file report.php
+4. buat router (web.php)
